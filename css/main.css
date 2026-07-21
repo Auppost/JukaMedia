@@ -442,6 +442,11 @@ ol {
   color: var(--color-bg);
 }
 
+/* Копия переключателя языков внутри бургер-меню: видна только на мобильном */
+.nav__lang {
+  display: none;
+}
+
 .nav__list {
   display: flex;
   gap: clamp(1rem, 2vw, 1.75rem);
@@ -495,35 +500,23 @@ ol {
 
 /* Mobile nav */
 @media (max-width: 62rem) {
-  /* Переключатель языков остаётся в шапке; прячем только CTA-кнопку */
   .header__right {
-    margin-left: auto;
-    gap: 0.5rem;
-  }
-
-  .header__cta {
     display: none;
   }
 
   .header__burger {
     display: flex;
-    margin-left: 0;
-  }
-}
-
-/* Совсем узкие экраны: уплотняем шапку, чтобы всё помещалось */
-@media (max-width: 26rem) {
-  .header__logo {
-    font-size: 1.1rem;
+    margin-left: auto;
   }
 
-  .lang__btn {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.72rem;
+  .nav__lang {
+    display: inline-flex;
+    margin-top: 1.5rem;
   }
 
-  .header__burger {
-    padding: 0.6rem 0.3rem;
+  .nav__lang .lang__btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 1.1rem;
   }
 
   .nav {
