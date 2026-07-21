@@ -495,13 +495,35 @@ ol {
 
 /* Mobile nav */
 @media (max-width: 62rem) {
+  /* Переключатель языков остаётся в шапке; прячем только CTA-кнопку */
   .header__right {
+    margin-left: auto;
+    gap: 0.5rem;
+  }
+
+  .header__cta {
     display: none;
   }
 
   .header__burger {
     display: flex;
-    margin-left: auto;
+    margin-left: 0;
+  }
+}
+
+/* Совсем узкие экраны: уплотняем шапку, чтобы всё помещалось */
+@media (max-width: 26rem) {
+  .header__logo {
+    font-size: 1.1rem;
+  }
+
+  .lang__btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .header__burger {
+    padding: 0.6rem 0.3rem;
   }
 
   .nav {
